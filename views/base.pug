@@ -1,0 +1,42 @@
+doctype html 
+html 
+  head 
+    //- title Natours #{tour}
+    //- #{...} in Pug is called interpolation. and that is used to insert a variable's value inside text.
+    block head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet' href='/css/style.css')
+      link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      
+
+      title Natours | Exciting tours for adventurous people
+
+  body 
+    //- h1= tour 
+    //- above "h1=tour" this is the buffered code
+    //- h1 The Park Camper 
+    //- h2= User.toUpperCase()
+
+    //- below is the unbuffered code (this code does not add to html)
+    //- const x = 9;
+    //- h2= 2 * x
+    //- p This is just Text
+
+    // Header
+    include header.pug
+    // Content
+    //- block content is a placeholder in the main layout where child templates insert their own page-specific content.
+    block content
+        
+
+    // Footer
+    include footer.pug
+
+    //- script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
+    //- script(src='/js/mapbox.js')
+    //- script(src='/js/login.js')
+    script(src='/js/bundle.js')
+    script(src='https://checkout.razorpay.com/v1/checkout.js')
+    //- script(src='/js/index.js')
